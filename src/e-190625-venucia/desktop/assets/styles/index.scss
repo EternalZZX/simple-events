@@ -2,8 +2,6 @@
 @import '~styles/desktop';
 @import './setting';
 
-
-
 .et-banner {
   position: fixed;
   top: 0;
@@ -273,7 +271,16 @@
           @include image(631px, 354px, '../images/inner-pic-1.png');
         }
       }
+    }
 
+    .et-section_360 {
+      height: 565px;
+
+      .et-360 {
+        margin: auto;
+        margin-top: 40px;
+        @include image(953px, 463px, '../images/bg-360.png');
+      }
     }
   }
 }
