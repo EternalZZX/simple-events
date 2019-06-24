@@ -104,15 +104,57 @@
     .et-section {
       position: relative;
 
-      .et-swiper {
-        width: 523px;
-        height: 407px;
+      .et-label {
+        padding-left: 20px;
+        font-size: 36px;
+        line-height: 60px;
+        color: $themeColor;
+        border-left: 5px solid $labelBorderColor;
 
-        .swiper-button-prev {
+        &.et-label_right {
+          padding-right: 20px;
+          padding-left: 0;
+          border-left: none;
+          border-right: 5px solid $labelBorderColor;
+        }
+      }
+
+      .et-text {
+        padding: 25px;
+        color: $textColor;
+
+        h4 {
+          margin-bottom: 10px;
+          font-size: 26px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: 300;
+
+          &.et-text_period {
+            margin-right: -20px;
+          }
+
+          &.et-text_comma {
+            margin-right: -28px;
+          }
+        }
+      }
+
+      .et-swiper {
+        .swiper-button-prev,
+        .swiper-button-next {
+          position: absolute;
+          top: auto;
+          right: 0;
+          bottom: 0;
+          left: auto;
           width: 52px;
           height: 52px;
           background-color: $themeColor;
-          background-image: url('../images/icon-arrow-left.png');
           background-size: 12px 15px;
 
           &:hover {
@@ -120,21 +162,41 @@
           }
         }
 
-        .swiper-button-next {
-          width: 52px;
-          height: 52px;
-          background-color: $themeColor;
-          background-image: url('../images/icon-arrow-right.png');
-          background-size: 12px 15px;
+        .swiper-button-prev {
+          right: 55px;
+          background-image: url('../images/icon-arrow-left.png');
+        }
 
-          &:hover {
-            background-color: $themeHoverColor;
+        .swiper-button-next {
+          background-image: url('../images/icon-arrow-right.png');
+        }
+
+        .swiper-pagination {
+          display: flex;
+          align-items: center;
+          width: auto;
+
+          .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            margin-right: 21px;
+            color: transparent;
+            background-color: $paginationColor;
+            opacity: 1;
+
+            &.swiper-pagination-bullet-active {
+              width: 22px;
+              height: 22px;
+              line-height: 20px;
+              color: $blockColor;
+              background-color: $themeColor;
+            }
           }
         }
       }
     }
 
-    .et-section__design {
+    .et-section_design {
       height: 496px;
 
       .et-section__bg {
@@ -146,6 +208,12 @@
       }
 
       .et-swiper {
+        position: absolute;
+        top: 32px;
+        left: 115px;
+        width: 523px;
+        height: 406px;
+
         .swiper-design-1 {
           @include image(523px, 355px, '../images/design-pic-1.png');
         }
@@ -162,6 +230,50 @@
           @include image(523px, 355px, '../images/design-pic-4.png');
         }
       }
+
+      .et-content {
+        position: absolute;
+        top: 68px;
+        right: 115px;
+        width: 393px;
+      }
+    }
+
+    .et-section_inner {
+      height: 425px;
+
+      .et-content {
+        position: absolute;
+        top: 25px;
+        left: 115px;
+        width: 389px;
+        text-align: right;
+      }
+      
+      .et-swiper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 631px;
+        height: 405px;
+
+        .swiper-inner-1 {
+          @include image(631px, 354px, '../images/inner-pic-1.png');
+        }
+
+        .swiper-inner-2 {
+          @include image(631px, 354px, '../images/inner-pic-1.png');
+        }
+
+        .swiper-inner-3 {
+          @include image(631px, 354px, '../images/inner-pic-1.png');
+        }
+
+        .swiper-inner-4 {
+          @include image(631px, 354px, '../images/inner-pic-1.png');
+        }
+      }
+
     }
   }
 }
@@ -175,6 +287,10 @@
     animation: fade-in-left 1s ease-out forwards;
   }
 
+  .fade-in-right {
+    animation: fade-in-right 1s ease-out forwards;
+  }
+
   .delay {
     opacity: 0;
     animation-delay: .8s;
@@ -184,7 +300,7 @@
 @keyframes fade-in-bottom {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -196,6 +312,17 @@
   from {
     opacity: 0;
     transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
   }
   to {
     opacity: 1;

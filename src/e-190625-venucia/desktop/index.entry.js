@@ -4,7 +4,7 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper';
 import './assets/styles/index';
 
-const elementIds = ['design'];
+const elementIds = ['design', 'inner'];
 const elements = elementIds.reduce((res, id) => {
   const el = document.getElementById(id);
   res[id] = {
@@ -15,30 +15,33 @@ const elements = elementIds.reduce((res, id) => {
   return res;
 }, {});
 
-new Swiper('#swiper-design', {
-  autoplay: {
-    delay: 3500
-  },
-  speed: 500,
-  loop: true,
-  grabCursor: true,
-  pagination: {
-    el: '#swiper-design-pagination',
-    clickable: true,
-    renderBullet (index, className) {
-      return `<span class="${className}">${index + 1}</span>`;
+const swiperIds = ['swiper-design', 'swiper-inner'];
+swiperIds.forEach(id => {
+  new Swiper(`#${id}`, {
+    autoplay: {
+      delay: 5000
+    },
+    speed: 500,
+    loop: true,
+    grabCursor: true,
+    pagination: {
+      el: `#${id}-pagination`,
+      clickable: true,
+      renderBullet (index, className) {
+        return `<span class="${className}">${index + 1}</span>`;
+      }
+    },
+    navigation: {
+      prevEl: `#${id}-prev`,
+      nextEl: `#${id}-next`
     }
-  },
-  navigation: {
-    prevEl: '#swiper-design-prev',
-    nextEl: '#swiper-design-next'
-  }
+  });
 });
 
 $(window).scroll(() => {
   const windiwScrollTop = $(window).scrollTop();
   for (const key of Object.keys(elements)) {
-    if (!elements[key].ready && elements[key].offsetTop >= windiwScrollTop) {
+    if (!elements[key].ready && windiwScrollTop >= elements[key].offsetTop) {
       elements[key].el.addClass('element-in');
       elements[key].ready = true;
     }
