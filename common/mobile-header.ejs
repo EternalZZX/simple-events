@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+  <%- "\<meta name=\"keywords\" content=\"" + header.keywords + "\">" %>
+  <%- "\<meta name=\"description\" content=\"" + header.description +"\">" %>
+  <% if (header.meta instanceof Array) { %>
+  <% header.meta.forEach(function (item) { %><%- item %>
+  <% }); %><% } %>
+  <title><%= header.title %></title>
+  <%- "\<link type=\"image/x-icon\" rel=\"icon\" href=\"" + header.icon + "\">" %>
+  <%- "\<link type=\"image/x-icon\" rel=\"shortcut icon\" href=\"" + header.icon + "\">" %>
+  <% if (header.links instanceof Array) { %>
+  <% header.links.forEach(function (link) { %><%- "\<link type=\"text/css\" rel=\"stylesheet\" href=\"" + link + "\">" %>
+  <% }); %><% } %>
+  <% if (header.scripts instanceof Array) { %>
+  <% header.scripts.forEach(function (script) { %><%- "\<script type=\"text/javascript\" src=\"" + script + "\">\</script>" %>
+  <% }); %><% } %>
+</head>
+<body>
