@@ -4,7 +4,7 @@ module.exports = {
   historyPath: 'events_history',
   devServer: {
     port: 8080,
-    startPath: 'pc/static/event1/index.html',
+    startPath: 'pc/static/venucia/index.html',
     apiPrefixes: [
       'activity'
     ],
