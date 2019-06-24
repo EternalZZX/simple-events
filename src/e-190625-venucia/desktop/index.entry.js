@@ -1,5 +1,7 @@
 import 'core-js';
 import $ from '@/lib/src/jquery-3.4.1.min.js';
+import Swiper from 'swiper';
+import 'swiper/dist/css/swiper';
 import './assets/styles/index';
 
 const elementIds = ['design'];
@@ -12,6 +14,26 @@ const elements = elementIds.reduce((res, id) => {
   };
   return res;
 }, {});
+
+new Swiper('#swiper-design', {
+  autoplay: {
+    delay: 3500
+  },
+  speed: 500,
+  loop: true,
+  grabCursor: true,
+  pagination: {
+    el: '#swiper-design-pagination',
+    clickable: true,
+    renderBullet (index, className) {
+      return `<span class="${className}">${index + 1}</span>`;
+    }
+  },
+  navigation: {
+    prevEl: '#swiper-design-prev',
+    nextEl: '#swiper-design-next'
+  }
+});
 
 $(window).scroll(() => {
   const windiwScrollTop = $(window).scrollTop();

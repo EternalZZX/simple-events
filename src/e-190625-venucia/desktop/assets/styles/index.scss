@@ -1,5 +1,8 @@
+@import '~styles/common';
 @import '~styles/desktop';
 @import './setting';
+
+
 
 .et-banner {
   position: fixed;
@@ -8,14 +11,73 @@
   bottom: 0;
   left: 0;
   min-width: 1200px;
+  min-height: 640px;
   background-image: url(../images/banner.png);
   background-size: cover;
   background-repeat: no-repeat;
 
+  .et-banner__price {
+    position: absolute;
+    top: 46.87vh;
+    left: 7vw;
+    @include image(25.86vw, 19.06vh, '../images/banner-price.png');
+  }
+
+  .et-banner__title {
+    position: absolute;
+    top: 23.44vh;
+    left: 44.92vw;
+    @include image(37.97vw, 14.38vh, '../images/banner-title.png');
+  }
+
   .et-banner__car {
-    width: 704px;
-    height: 375px;
-    background: url(../images/car.png) center/contain no-repeat;
+    position: absolute;
+    top: 39.06vh;
+    left: 33.98vw;
+    @include image(55vw, 58.59vh, '../images/car.png');
+  }
+
+  .et-banner__button {
+    position: absolute;
+    width: 15.63vw;
+    height: 5vh;
+    font-size: 17.6px;
+    color: $themeColor;
+    background-color: $blockColor;
+    border-radius: 2.5vh;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+
+    &:first-of-type {
+      top: 69.53vh;
+      left: 10.16vw;
+    }
+
+    &:last-of-type {
+      top: 76.56vh;
+      left: 12.5vw;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(1.02);
+    }
+
+    .et-icon {
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: text-top;
+    }
+
+    .et-icon-wheel {
+      @include image(22px, 22px, '../images/icon-wheel.png');
+    }
+
+    .et-icon-buy {
+      @include image(22px, 22px, '../images/icon-buy.png');
+    }
   }
 }
 
@@ -27,8 +89,116 @@
   background-color: $blockColor;
   z-index: 1;
 
+  .et-video {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/video.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   .et-main {
     width: 1200px;
     margin: auto;
+
+    .et-section {
+      position: relative;
+
+      .et-swiper {
+        width: 523px;
+        height: 407px;
+
+        .swiper-button-prev {
+          width: 52px;
+          height: 52px;
+          background-color: $themeColor;
+          background-image: url('../images/icon-arrow-left.png');
+          background-size: 12px 15px;
+
+          &:hover {
+            background-color: $themeHoverColor;
+          }
+        }
+
+        .swiper-button-next {
+          width: 52px;
+          height: 52px;
+          background-color: $themeColor;
+          background-image: url('../images/icon-arrow-right.png');
+          background-size: 12px 15px;
+
+          &:hover {
+            background-color: $themeHoverColor;
+          }
+        }
+      }
+    }
+
+    .et-section__design {
+      height: 496px;
+
+      .et-section__bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        opacity: 0.85;
+        @include image(288px, 287px, '../images/section-1.png');
+      }
+
+      .et-swiper {
+        .swiper-design-1 {
+          @include image(523px, 355px, '../images/design-pic-1.png');
+        }
+
+        .swiper-design-2 {
+          @include image(523px, 355px, '../images/design-pic-2.png');
+        }
+
+        .swiper-design-3 {
+          @include image(523px, 355px, '../images/design-pic-3.png');
+        }
+
+        .swiper-design-4 {
+          @include image(523px, 355px, '../images/design-pic-4.png');
+        }
+      }
+    }
+  }
+}
+
+.element-in {
+  .fade-in-bottom {
+    animation: fade-in-bottom 1s ease-out forwards;
+  }
+
+  .fade-in-left {
+    animation: fade-in-left 1s ease-out forwards;
+  }
+
+  .delay {
+    opacity: 0;
+    animation-delay: .8s;
+  }
+}
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

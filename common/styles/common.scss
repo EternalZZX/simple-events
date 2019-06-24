@@ -6,6 +6,12 @@
   text-overflow: ellipsis;
 }
 
+@mixin image ($width, $height, $file) {
+  width: $width;
+  height: $height;
+  background: url($file) center/contain no-repeat;
+}
+
 @function rand($min, $max) {
   @return random() * ($max - $min) + $min;
 }
