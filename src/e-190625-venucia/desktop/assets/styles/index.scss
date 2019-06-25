@@ -565,12 +565,251 @@
     }
 
     .et-section_quota {
-      height: 1320px;
+      height: 1400px;
 
       .et-section__bg {
         top: 430px;
         right: 0;
         @include image(748px, 833px, '../images/section-3.png');
+      }
+
+      .et-section__label {
+        margin: auto;
+        @include image(1049px, 183px, '../images/quota.png');
+      }
+
+      .et-label {
+        position: absolute;
+        top: 245px;
+        left: 530px;
+      }
+
+      .et-layout {
+        position: absolute;
+        display: flex;
+
+        .et-icon {
+          display: block;
+          border-radius: 100%;
+        }
+
+        div {
+          h4 {
+            margin-top: 100px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            line-height: 30px;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 30px;
+            font-weight: 300;
+          }
+        }
+      }
+
+      .et-layout.et-layout_gearbox {
+        top: 270px;
+        left: 120px;
+
+        .et-icon {
+          margin-right: 50px;
+          @include image(351px, 351px, '../images/gearbox.png');
+        }
+      }
+
+      .et-layout.et-layout_engine {
+        top: 570px;
+        right: 160px;
+
+        .et-icon {
+          margin-left: 30px;
+          @include image(351px, 351px, '../images/engine.png');
+        }
+      }
+
+      .et-car {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        @include image(881px, 408px, '../images/car-iron.png');
+      }
+    }
+
+    .et-section_bodywork {
+      height: 540px;
+
+      div {
+        text-align: center;
+        
+        h4 {
+          margin-top: 50px;
+          margin-bottom: 10px;
+          font-size: 24px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 30px;
+          font-weight: 300;
+        }
+      }
+
+      .et-car {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        @include image(796px, 363px, '../images/car-safe.png');
+      }
+    }
+
+    .et-section_air {
+      height: 549px;
+
+      .et-section__bg {
+        top: 0;
+        left: 0;
+        @include image(590px, 549px, '../images/section-4.png');
+      }
+
+      .et-text {
+        position: absolute;
+        top: 0;
+        left: 642px;
+        padding: 0;
+
+        h4 {
+          margin-bottom: 10px;
+          font-size: 24px;
+          line-height: 30px;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 30px;
+          font-weight: 300;
+        }
+      }
+
+      .et-layout {
+        position: absolute;
+        top: 190px;
+        left: 350px;
+        display: flex;
+        justify-content: space-around;
+
+        .et-layout__item {
+          flex-basis: 260px;
+          width: 260px;
+          text-align: center;
+          transition: transform .3s ease-in-out;
+
+          &:hover {
+            transition: transform .3s ease-in-out;
+            transform: translateY(-5px);
+          }
+
+          .et-icon {
+            display: block;
+            width: 110px;
+            height: 110px;
+            margin: auto;
+            font-size: 24px;
+            line-height: 110px;
+            text-align: center;
+            color: $themeColor;
+            border: 2px solid $themeColor;
+            border-radius: 100%;
+          }
+
+          div {
+            h4 {
+              margin-top: 25px;
+              margin-bottom: 10px;
+              font-size: 24px;
+              line-height: 30px;
+            }
+
+            p {
+              font-size: 18px;
+              line-height: 30px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+
+    .et-section_specs {
+      background-color: $backgroundColor;
+
+      .et-specs {
+        .et-specs__item {
+          display: flex;
+          width: 1065px;
+          height: 230px;
+          margin: auto;
+          border-bottom: 1px solid $borderColor;
+
+          .et-specs__left {
+            .et-specs__title {
+              margin: 30px;
+              font-size: 24px;
+              font-weight: 500;
+              color: $labelColor;
+            }
+
+            .et-specs__image {
+              @include image(276px, 113px, '../images/car-red.png');
+            }
+          }
+
+          .et-specs__right {
+            .et-specs__label {
+              margin: 34px 55px;
+              font-size: 18px;
+              font-weight: 300;
+              color: $labelColor;
+            }
+
+            .et-specs__table {
+              display: flex;
+              margin-left: 20px;
+              color: $textColor;
+
+              .et-specs__data {
+                position: relative;
+                padding: 0 35px;
+
+                .et-specs__text {
+                  margin: 30px 0;
+                  margin-bottom: 10px;
+                  font-size: 16px;
+                  font-weight: 300;
+                }
+
+                .et-specs__value {
+                  font-size: 22px;
+                  font-weight: 500;
+                }
+
+                &:nth-child(1)::after,
+                &:nth-child(2)::after {
+                  content: '/';
+                  position: absolute;
+                  top: 43px;
+                  right: -7px;
+                  font-size: 26px;
+                  color: $splitColor;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

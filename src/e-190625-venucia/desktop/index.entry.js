@@ -6,7 +6,7 @@ import './assets/styles/index';
 
 const elementIds = [
   'design', 'inner', '360', 'control', 'mutual',
-  'safe', 'quota'
+  'safe', 'quota', 'bodywork', 'air', 'specs'
 ];
 const elements = elementIds.reduce((res, id) => {
   const el = document.getElementById(id);
