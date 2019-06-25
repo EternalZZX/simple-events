@@ -88,11 +88,26 @@
   z-index: 1;
 
   .et-video {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url(../images/video.png);
     background-size: cover;
     background-repeat: no-repeat;
+
+    .et-icon.et-icon-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -44px;
+      margin-left: -44px;
+      cursor: pointer;
+      @include image(88px, 88px, '../images/icon-play.png');
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   .et-main {
@@ -996,8 +1011,129 @@
   }
 
   .et-footer {
+    width: 1200px;
     margin: auto;
-    @include image(1200px, 417px, '../images/footer.png');
+
+    .et-footer__top {
+      display: flex;
+      padding: 50px 100px;
+      padding-right: 0;
+      color: $blockColor;
+      background-color: $navColor;
+
+      .et-footer__menu {
+        display: flex;
+        justify-content: space-around;
+        width: 580px;
+
+        .et-footer__menu-item {
+          .et-footer__label {
+            margin-bottom: 20px;
+            font-size: 16px;
+            font-weight: 500;
+          }
+
+          .et-footer__list {
+            .et-footer__list-item {
+              margin-bottom: 10px;
+              font-size: 16px;
+              font-weight: 300;
+              user-select: none;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      .et-footer__address {
+        margin-left: 250px;
+        
+        h4 {
+          margin-bottom: 20px;
+          font-size: 16px;
+          font-weight: 300;
+        }
+
+        p {
+          position: relative;
+          margin-bottom: 20px;
+          font-size: 24px;
+          font-weight: 500;
+
+          .et-icon {
+            position: absolute;
+            display: block;
+            left: -35px;
+            top: 1px;
+
+            &.et-icon-mobile {
+              @include image(16px, 24px, '../images/icon-mobile.png');
+            }
+
+            &.et-icon-phone {
+              @include image(22px, 22px, '../images/icon-phone.png');
+            }
+          }
+        }
+
+        .et-footer__share {
+          display: flex;
+          justify-content: space-around;
+          width: 160px;
+          margin-left: -15px;
+
+          div {
+            width: 42px;
+            height: 42px;
+            background-color: $shareColor;
+            border-radius: 100%;
+            cursor: pointer;
+
+            .et-icon {
+              display: block;
+              margin: auto;
+
+              &.et-icon-wechat {
+                margin-top: 9px;
+                @include image(27px, 22px, '../images/icon-wechat.png');
+              }
+  
+              &.et-icon-weibo {
+                margin-top: 9px;
+                @include image(27px, 22px, '../images/icon-weibo.png');
+              }
+
+              &.et-icon-tmall {
+                margin-top: 13px;
+                @include image(31px, 14px, '../images/icon-tmall.png');
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .et-footer__bottom {
+      padding: 30px 0;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: center;
+      color: $labelColor;
+      background-color: $blockColor;
+
+      b {
+        margin-right: 5px;
+        font-weight: 500;
+      }
+
+      i {
+        margin: 0 10px;
+      }
+
+      span {
+        cursor: pointer;
+      }
+    }
   }
 }
 
@@ -1018,6 +1154,10 @@
 
   .fade-in-right {
     animation: fade-in-right 1s ease-out forwards;
+  }
+
+  .slide-in-down {
+    animation: slide-in-down 1s ease-out forwards;
   }
 
   .delay {
@@ -1055,5 +1195,16 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    transform: scaleY(0);
+    transform-origin: 0% 0%;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: 0% 0%;
   }
 }

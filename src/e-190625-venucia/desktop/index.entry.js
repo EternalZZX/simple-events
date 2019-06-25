@@ -6,7 +6,7 @@ import 'swiper/dist/css/swiper';
 import './assets/styles/index';
 
 const elementIds = [
-  'design', 'inner', '360', 'control', 'mutual',
+  'video', 'design', 'inner', '360', 'control', 'mutual',
   'safe', 'quota', 'bodywork', 'air', 'specs', 'news'
 ];
 const elements = elementIds.reduce((res, id) => {
