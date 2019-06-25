@@ -1,5 +1,6 @@
 import 'core-js';
 import $ from '@/lib/src/jquery-3.4.1.min.js';
+import Utils from '@/lib/utils';
 import Swiper from 'swiper';
 import 'swiper/dist/css/swiper';
 import './assets/styles/index';
@@ -50,12 +51,17 @@ new Swiper ('#swiper-news', {
   grabCursor: true
 });
 
-$(window).scroll(() => {
+const animation = () => {
   const windiwScrollTop = $(window).scrollTop();
   for (const key of Object.keys(elements)) {
-    if (!elements[key].ready && windiwScrollTop >= elements[key].offsetTop) {
-      elements[key].el.addClass('element-in');
+    if (!elements[key].ready && windiwScrollTop >= elements[key].offsetTop + 50) {
       elements[key].ready = true;
+      elements[key].el.addClass('element-in');
     }
   }
-});
+}
+
+const debounceAnimation = Utils.debounce(10, animation);
+
+debounceAnimation();
+$(window).scroll(debounceAnimation);
