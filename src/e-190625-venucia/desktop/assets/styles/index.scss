@@ -974,6 +974,14 @@
         .swiper-news-3 {
           @include image(465px, 300px, '../images/news-pic-1.png');
         }
+
+        .swiper-news-4 {
+          @include image(465px, 300px, '../images/news-pic-2.png');
+        }
+
+        .swiper-news-5 {
+          @include image(465px, 300px, '../images/news-pic-1.png');
+        }
       }
       
       .et-panel {
@@ -1139,7 +1147,8 @@
 
 .fade-in-bottom,
 .fade-in-left,
-.fade-in-right {
+.fade-in-right,
+.slide-in-down {
   opacity: 0 !important;
 }
 
@@ -1200,10 +1209,12 @@
 
 @keyframes slide-in-down {
   from {
+    opacity: 1;
     transform: scaleY(0);
     transform-origin: 0% 0%;
   }
   to {
+    opacity: 1;
     transform: scaleY(1);
     transform-origin: 0% 0%;
   }
