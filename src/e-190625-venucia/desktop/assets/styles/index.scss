@@ -40,7 +40,7 @@
     width: 15.63vw;
     height: 5vh;
     font-size: 17.6px;
-    color: $themeColor;
+    color: $themeTextColor;
     background-color: $blockColor;
     border-radius: 2.5vh;
     box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
@@ -102,6 +102,12 @@
     .et-section {
       position: relative;
 
+      .et-section__bg {
+        position: absolute;
+        opacity: 0.85;
+        z-index: -1;
+      }
+
       .et-label {
         padding-left: 20px;
         font-size: 36px;
@@ -112,6 +118,7 @@
         &.et-label_right {
           padding-right: 20px;
           padding-left: 0;
+          text-align: right;
           border-left: none;
           border-right: 5px solid $labelBorderColor;
         }
@@ -198,10 +205,8 @@
       height: 496px;
 
       .et-section__bg {
-        position: absolute;
         right: 0;
         bottom: 0;
-        opacity: 0.85;
         @include image(288px, 287px, '../images/section-1.png');
       }
 
@@ -274,12 +279,141 @@
     }
 
     .et-section_360 {
-      height: 565px;
+      height: 535px;
 
       .et-360 {
         margin: auto;
         margin-top: 40px;
         @include image(953px, 463px, '../images/bg-360.png');
+
+        .et-360__car {
+          position: absolute;
+          top: 100px;
+          left: 260px;
+          @include image(688px, 283px, '../images/car-360.png');
+        }
+      }
+
+      .et-360__panel {
+        position: absolute;
+        top: 180px;
+        right: 45px;
+        display: flex;
+        flex-direction: column;
+        height: 235px;
+        border-radius: 21px;
+
+        .et-360__button {
+          flex: auto;
+          width: 42px;
+          height: 0;
+          line-height: 68px;
+          text-align: center;
+          background-color: $themeColor;
+          cursor: pointer;
+
+          &:first-child {
+            border-radius: 21px 21px 0 0;
+          }
+
+          &:last-child {
+            border-radius: 0 0 21px 21px;
+          }
+
+          &:hover {
+            background-color: $themeHoverColor;
+          }
+
+          .et-icon {
+            display: inline-block;
+
+            &.et-icon-car {
+              @include image(33px, 15px, '../images/icon-car.png');
+            }
+
+            &.et-icon-seat {
+              @include image(26px, 30px, '../images/icon-seat.png');
+            }
+
+            &.et-icon-wheel {
+              @include image(26px, 26px, '../images/icon-wheel-white.png');
+            }
+
+            &.et-icon-buy {
+              @include image(25px, 25px, '../images/icon-buy-white.png');
+            }
+          }
+        }
+      }
+
+      .et-360__color {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        @include image(520px, 54px, '../images/color.png');
+      }
+    }
+
+    .et-section_control {
+      height: 470px;
+      overflow: hidden;
+
+      .et-section__bg {
+        bottom: 0;
+        left: 0;
+        @include image(469px, 468px, '../images/section-2.png');
+      }
+
+      .et-label {
+        position: absolute;
+        top: 55px;
+        right: 150px;
+      }
+
+      .et-gallery {
+        display: flex;
+        justify-content: space-around;
+        width: 830px;
+        margin: auto;
+        margin-top: 135px;
+
+        .et-gallery__item {
+          .et-gallery__label {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 300;
+            color: $labelColor;
+          }
+
+          .et-gallery__image {
+            transition: transform .3s ease-in-out;
+            cursor: pointer;
+          }
+
+          .et-gallery__image:hover {
+            transition: transform .3s ease-in-out;
+            transform: scale(1.1);
+          }
+
+          &:first-child .et-gallery__image {
+            @include image(382px, 220px, '../images/control-pic-1.png');
+          }
+
+          &:last-child .et-gallery__image {
+            @include image(382px, 220px, '../images/control-pic-2.png');
+          }
+        }
+      }
+    }
+
+    .et-section_mutual {
+      height: 740px;
+
+      .et-section__bg {
+        top: 90px;
+        right: 0;
       }
     }
   }

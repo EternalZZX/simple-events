@@ -4,7 +4,9 @@ import Swiper from 'swiper';
 import 'swiper/dist/css/swiper';
 import './assets/styles/index';
 
-const elementIds = ['design', 'inner', '360'];
+const elementIds = [
+  'design', 'inner', '360', 'control', 'mutual'
+];
 const elements = elementIds.reduce((res, id) => {
   const el = document.getElementById(id);
   res[id] = {
