@@ -19,28 +19,50 @@ const elements = elementIds.reduce((res, id) => {
   return res;
 }, {});
 
+const swiperText = {
+  'swiper-design': [
+    '<h4>“星空点阵式”启辰家族前格栅</h4><p>双侧搭配“光翼”镀铬饰条，</p><p>展现科技想象力，尽显霸气。</p>',
+    '<h4>悬浮式车顶</h4><p>双色车身设计，搭配悬浮式车顶，</p><p>兼具科技感与时尚个性。</p>',
+    '<h4>“星耀式” LED光导尾灯</h4><p>“星耀式”LED光导尾灯，</p><p>独特造型更具视觉张力。</p>',
+    '<h4>“星航” 投射式LED前大灯</h4><p>“星航”投射式LED前大灯设计，</p><p>光影中流露科技魅力。</p>'
+  ],
+  'swiper-inner': [
+    '<h4>科技范高质感内饰</h4><p class="et-text_period">哑光飞翼贯穿前面板与中控大屏。</p><p class="et-text_comma">高质感多层加饰面板，围绕驾驶舱，</p><p class="et-text_comma">形成环绕式感觉，</p><p class="et-text_period">门把手所触及处均有皮质包饰。</p>',
+    '<h4>全景天窗</h4><p class="et-text_comma">大尺寸电动可开启全景天窗，</p><p class="et-text_period">提供广阔视野享受。</p>',
+    '<h4>科技范高质感内饰</h4><p class="et-text_period">哑光飞翼贯穿前面板与中控大屏。</p><p class="et-text_comma">高质感多层加饰面板，围绕驾驶舱，</p><p class="et-text_comma">形成环绕式感觉，</p><p class="et-text_period">门把手所触及处均有皮质包饰。</p>'
+  ]
+}
 const swiperIds = ['swiper-design', 'swiper-inner'];
-swiperIds.forEach(id => {
-  new Swiper(`#${id}`, {
-    autoplay: {
-      delay: 5000
-    },
-    speed: 500,
-    loop: true,
-    grabCursor: true,
-    pagination: {
-      el: `#${id}-pagination`,
-      clickable: true,
-      renderBullet (index, className) {
-        return `<span class="${className}">${index + 1}</span>`;
-      }
-    },
-    navigation: {
-      prevEl: `#${id}-prev`,
-      nextEl: `#${id}-next`
+swiperIds.map(id => new Swiper(`#${id}`, {
+  autoplay: {
+    delay: 8000
+  },
+  speed: 500,
+  loop: true,
+  grabCursor: true,
+  pagination: {
+    el: `#${id}-pagination`,
+    clickable: true,
+    renderBullet (index, className) {
+      return `<span class="${className}">${index + 1}</span>`;
     }
-  });
-});
+  },
+  navigation: {
+    prevEl: `#${id}-prev`,
+    nextEl: `#${id}-next`
+  },
+  on: {
+    slideChange () {
+      const el = $(`#${id}-text`);
+      el.attr('class', 'et-text et-text_hide');
+      el.empty();
+      el.append(swiperText[id][this.realIndex]);
+      setTimeout(() => {
+        el.attr('class', 'et-text fade-in-bottom');
+      }, 100)
+    }
+  }
+}));
 
 new Swiper ('#swiper-news', {
   speed: 500,
