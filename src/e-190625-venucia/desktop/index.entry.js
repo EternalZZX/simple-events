@@ -41,6 +41,15 @@ swiperIds.forEach(id => {
   });
 });
 
+new Swiper ('#swiper-news', {
+  speed: 500,
+  width: 970,
+  slidesOffsetBefore: 80,
+  slidesOffsetAfter: -80,
+  slidesPerView: 2,
+  grabCursor: true
+});
+
 $(window).scroll(() => {
   const windiwScrollTop = $(window).scrollTop();
   for (const key of Object.keys(elements)) {
