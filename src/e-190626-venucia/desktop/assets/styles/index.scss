@@ -8,28 +8,39 @@
   right: 0;
   bottom: 0;
   left: 0;
-  min-width: 1200px;
-  min-height: 640px;
-  background-image: url(../images/banner.png);
+  @include image(100%, 100%, '../images/banner.png');
   background-size: cover;
-  background-repeat: no-repeat;
 
   .et-section__bg_1 {
     position: absolute;
     top: 0;
     left: 0;
-    @include image(53.2vw, 79.84vh, '../images/banner-bg-1.png');
+    @include image(100.89vh, 75.7vh, '../images/banner-bg-1.png');
     background-size: cover;
-    background-position: top;
+    background-position: top left;
   }
 
   .et-section__bg_2 {
     position: absolute;
     top: 0;
     right: 0;
-    @include image(62.42vw, 100vh, '../images/banner-bg-2.png');
+    @include image(118.37vh, 100vh, '../images/banner-bg-2.png');
     background-size: cover;
     background-position: top;
+  }
+
+  .et-section__bg_3 {
+    position: absolute;
+    top: 38.52vh;
+    right: 0;
+    @include image(18.92vw, 16.15vh, '../images/banner-bg-3.png');
+  }
+
+  .et-banner__logo {
+    position: absolute;
+    top: 2.91vw;
+    left: 4.58vw;
+    @include image(7.92vw, 3.25vw, '../images/logo.png');
   }
 
   .et-banner__price {
@@ -1276,7 +1287,7 @@
     opacity: .85;
   }
   to {
-    height: 79.84vh;
+    height: 75.7vh;
     opacity: .85;
   }
 }

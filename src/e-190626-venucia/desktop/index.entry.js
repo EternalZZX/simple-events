@@ -9,6 +9,7 @@ const elementIds = [
   'video', 'design', 'inner', '360', 'control', 'mutual',
   'safe', 'quota', 'bodywork', 'air', 'specs', 'news'
 ];
+
 const elements = elementIds.reduce((res, id) => {
   const el = document.getElementById(id);
   res[id] = {
