@@ -77,7 +77,7 @@ new Swiper ('#swiper-news', {
 const animation = () => {
   const windiwScrollTop = $(window).scrollTop();
   for (const key of Object.keys(elements)) {
-    if (!elements[key].ready && windiwScrollTop >= elements[key].offsetTop + 300) {
+    if (!elements[key].ready && windiwScrollTop >= elements[key].offsetTop + 250) {
       elements[key].ready = true;
       elements[key].el.addClass('element-in');
     }
