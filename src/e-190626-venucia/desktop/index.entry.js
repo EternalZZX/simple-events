@@ -29,7 +29,7 @@ const swiperText = {
   'swiper-inner': [
     '<h4>科技范高质感内饰</h4><p class="et-text_period">哑光飞翼贯穿前面板与中控大屏。</p><p class="et-text_comma">高质感多层加饰面板，围绕驾驶舱，</p><p class="et-text_comma">形成环绕式感觉，</p><p class="et-text_period">门把手所触及处均有皮质包饰。</p>',
     '<h4>全景天窗</h4><p class="et-text_comma">大尺寸电动可开启全景天窗，</p><p class="et-text_period">提供广阔视野享受。</p>',
-    '<h4>科技范高质感内饰</h4><p class="et-text_period">哑光飞翼贯穿前面板与中控大屏。</p><p class="et-text_comma">高质感多层加饰面板，围绕驾驶舱，</p><p class="et-text_comma">形成环绕式感觉，</p><p class="et-text_period">门把手所触及处均有皮质包饰。</p>'
+    '<h4>Multi-Layer人体工学座椅</h4><p class="et-text_comma">采用航空低重力座椅设计理念，</p><p class="et-text_comma">提供更好的支撑，</p><p class="et-text_comma">有效降低乘坐疲劳感，乐享无拘舒适；</p><p class="et-text_comma">双色缝线工艺，黑棕搭配更显运动气质，</p><p class="et-text_period">不失品质感。</p>'
   ]
 }
 const swiperIds = ['swiper-design', 'swiper-inner'];
