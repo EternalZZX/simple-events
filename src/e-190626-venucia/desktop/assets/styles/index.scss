@@ -1192,8 +1192,16 @@
 .bg-468-slide-in-down,
 .bg-833-slide-in-down,
 .bg-549-slide-in-down,
-.bg-325-slide-in-down {
-  opacity: 0 !important;
+.bg-325-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-511-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-675-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-287-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-468-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-833-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-549-slide-in-down,
+.et-root .et-main .et-section .et-section__bg.bg-325-slide-in-down {
+  opacity: 0;
 }
 
 .element-in {
