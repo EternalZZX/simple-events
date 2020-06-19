@@ -1,4 +1,4 @@
-# 活动工程
+# 简易活动
 
 ## npm 命令说明
 
@@ -20,23 +20,11 @@ npm run start
 npm run dev
 ```  
 
-### 4. 启动 dev server 仅编译 events_history
-
-```shell
-npm run history
-```  
-
-### 5. 生产环境编译
+### 4. 生产环境编译
 
 ```shell
 npm run build
 ```  
-
-## gitlab-ci 说明
-
-1. master分支，编译所有活动，全量同步
-2. 日期开发分支，仅编译 src 文件夹下未上线活动，不同活动之间不互相覆盖，e.g. nrc/190101
-3. 其他分支，编译所有活动，增量覆盖，e.g. nrc/yourname
 
 ## 功能支持
 
@@ -58,7 +46,7 @@ npm run build
 ## Webpack 使用
 
 1. 活动目录中包含 *.entry.js 命名的文件，将被识别使用 Webpack 构建  
-2. 活动目录中不包含 *.entry.js，将不使用 Webpack，与旧活动编译方式相同  
+2. 活动目录中不包含 *.entry.js，将不使用 Webpack  
 3. *.entry.js 命名作为 Webpack 入口文件，同名 *.ejs 作为 template 自动插入打包的 JS/CSS bundle  
 4. 项目使用 Webpack 打包构建，assets 目录下资源文件不会作为静态文件复制到生产环境  
 5. assets 目录下的资源文件需使用 ES6 import 在 index.entry.js 入口文件或其依赖中引入  
