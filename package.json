@@ -81,7 +81,7 @@
     "postcss-safe-parser": "^4.0.2",
     "postcss-url": "^8.0.0",
     "sass-loader": "^8.0.2",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "url-loader": "^4.1.0",
     "vinyl-named": "^1.1.0",
     "vue-loader": "^15.7.0",
